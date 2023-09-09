@@ -1,2 +1,2 @@
 # CsharpCodes
-waragud
+Earl's Study notes, for C#
