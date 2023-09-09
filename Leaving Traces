@@ -1,0 +1,25 @@
+using System;
+using static System.Console;
+
+class program
+{
+    static void Main (string[] args)
+    {
+    Write("Enter n: ");
+    int n = int.Parse(ReadLine());
+    Write("Enter y: ");
+    int y = int.Parse(ReadLine());
+    for(int i = 1; i < n; i++)
+        {
+            if (i == y)
+            {
+                WriteLine();
+            }
+            for(int j = 0; j < n; j++)
+            {
+                Write("*");
+            }
+            WriteLine();
+        }
+    }
+}
