@@ -1,0 +1,85 @@
+using System;
+using static System.Console;
+
+class Shape
+{
+    public double AreaCircle(double radius)
+    {
+        // Compute the area of a circle
+        return Math.PI * radius * radius;
+    }
+    public double VolumeCube(double sideLength)
+    {
+        // Compute the volume of a cube
+        return sideLength * sideLength * sideLength;
+    }
+    public double PerimeterTriangle(double side1, double side2, double side3)
+    {
+        // Compute the perimeter of a triangle
+        return side1 + side2 + side3;
+    }
+    public double SurfaceAreaRec(double length, double width)
+    {
+        // Compute the surface area of a rectangle
+        return 2 * (length * width + length * width);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        WriteLine("---Enter the corresponding number you want to execute---");
+        WriteLine("[1] AreaCircle: Compute the area of the Circle");
+        WriteLine("[2] VolumeCube: Compute the volume of a cube");
+        WriteLine("[3] PerimeterTriangle: Compute the perimeter of a triangle");
+        WriteLine("[4] SurfaceAreaRec: Compute the surface area of a rectangle");
+        WriteLine();
+
+        Write("Enter a number: ");
+        int choice = int.Parse(ReadLine());
+
+        Shape shape = new Shape();
+
+        switch (choice)
+        {
+            case 1:
+                Write("Enter Radius: ");
+                double radius = double.Parse(ReadLine());
+                double rad = shape.AreaCircle(radius);
+                Console.WriteLine($"Area of circle: {rad:0.00}");
+                break;
+
+            case 2:
+                Write("Enter side length: ");
+                double sideLength = double.Parse(ReadLine());
+                double cubeVolume = shape.VolumeCube(sideLength);
+                Console.WriteLine($"Volume of Cube: {cubeVolume:0.00}");
+                break;
+
+            case 3:
+                Write("Enter side1: ");
+                double side1 = double.Parse(ReadLine());
+                Write("Enter side2: ");
+                double side2 = double.Parse(ReadLine());
+                Write("Enter side3: ");
+                double side3 = double.Parse(ReadLine());
+                double trianglePerimeter = shape.PerimeterTriangle(side1, side2, side3);
+                Console.WriteLine($"Perimeter of Triangle: {trianglePerimeter:0.00}");
+                break;
+
+            case 4:
+                Write("Enter length: ");
+                double length = double.Parse(ReadLine());
+                Write("Enter width: ");
+                double width = double.Parse(ReadLine());
+                double surfaceAreaRec = shape.SurfaceAreaRec(length, width);
+                Console.WriteLine($"Surface Area of Rectangle: {surfaceAreaRec:0.00}");
+                break;
+
+            default:
+                WriteLine("Invalid choice.");
+                break;
+        }
+    }
+}
